@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img src="https://hexaware.com/wp-content/themes/hexaware-main/images/Brand/downloadbrand/color/logo.png" style="height:75px" alt="Hexaware logo">
+    <a class="navbar-brand" href="">Leave Management System</a>
+
+    <div style="text-align:right; width:100%; padding:0;">
+      <a href="https://hexaware.com/"><button class="btn btn-info my-2 my-sm-0" type="submit">About us</button></a>
+    </div>
+</nav>
+<div class="text-center container">
+    <br>
+    <br>
+    <table class="table table-dark table-striped table-hover">
+      <tr>
+        <th>EMP_ID</th>
+        <th>EMP_NAME</th>
+        <th>Login</th>
+      </tr>
+      
+      <tr class="employees" *ngFor="let employee of employees">
+        <td>
+            {{employee.empId}}
+        </td>
+        <td>
+            {{employee.empName}}
+        </td>
+        <td>
+            <form #empDetails ="ngForm" (ngSubmit) = "handleSubmit(employee.empId)">
+                <input type="submit" value="Login" class="btn btn-info btn-sm">
+            </form>
+        </td>
+      </tr>
+      
+    </table>
+</div>
+<div style="text-align:center">
+    <br><br>
+    <h6><b>© Hexaware Technologies. All rights reserved @2019</b></h6>
+</div>

@@ -1,0 +1,63 @@
+<div>
+  <div *ngIf = "!ceoOrNot">
+    <h3>Leave Status</h3>
+    <div *ngIf = "isFound">
+      <table class="table table-borderless table-dark" style="text-align:center;">
+        <thead>
+          <tr>
+            <th>Leave Id</th>
+            <th>Leave Type</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>No of days</th>
+            <th>Leave Status</th>
+            <th>Reason</th>
+            <th>Manager Comments</th>
+            <th>Employee ID</th>
+          </tr>
+        </thead>
+        <tbody *ngFor = "let leaveDetails of leaveDetails">
+          <tr>
+            <td>{{leaveDetails.leaveId}}</td>
+            <td>{{leaveDetails.leaveType}}</td>
+            <td>{{leaveDetails.startDate}}</td>
+            <td>{{leaveDetails.endDate}}</td>
+            <td>{{leaveDetails.noOfDays}}</td>
+            <td>{{leaveDetails.leaveStatus}}</td>
+            <td>{{leaveDetails.reason}}</td>
+            <td>{{leaveDetails.managerComments}}</td>
+            <td>{{leaveDetails.emplId}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="text-align:right; width:100%; padding-right:2%;">
+        <input type="button" value="Apply New Leave" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+    </div>
+      
+  
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header bg-dark" style="color:white">
+            <h4 class="modal-title" style="text-align:center; width:90%;">Leave form</h4>
+            <button type="button" class="close" data-dismiss="modal" style="width:10%; text-align:center; color:white">x</button>
+          </div>
+          <div class="modal-body">
+              <app-apply-leave></app-apply-leave>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+
+</div>

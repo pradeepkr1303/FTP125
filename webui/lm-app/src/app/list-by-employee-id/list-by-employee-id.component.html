@@ -1,0 +1,46 @@
+<div>
+    <!-- <br>
+    <form class="form-inline" #getEmpId ="ngForm" (ngSubmit) = "handleSubmit(getEmpId.value)">
+      <label class="mr-sm-2">Enter Employee ID</label>
+      <input type="text" name = empId [(ngModel)] = "empId" class="mb-2 mr-sm-2">
+      <input type="submit" class="btn btn-primary mb-2" value="Submit">
+    </form> -->
+
+    <div *ngIf = "isFound && !isNotFound">
+        <table class="table table-borderless table-dark table-responsive" style="text-align:center;">
+          <tr>
+            <th>EMP_ID</th>
+            <th>EMP_NAME</th>
+            <th>PH_NO</th>
+            <th>EMP_EMAIL</th>
+            <th>DEPT_NO</th>
+            <th>LEAVE_BALANCE</th>
+            <th>MANAGER_ID</th>
+          </tr>
+          <tr>
+              <td>
+                  {{employee.empId}}
+              </td>
+              <td>
+                  {{employee.empName}}
+              </td>
+              <td>
+                  {{employee.empPhoneNo}}
+              </td>
+              <td>
+                  {{employee.empEmail}}
+              </td>
+              <td>
+                  {{employee.empDeptNo}}
+              </td>
+              <td>
+                  {{employee.empLeaveBalance}}
+              </td>
+              <td>
+                  {{employee.empManagerId}}
+              </td>
+          </tr>
+        </table>
+    </div>
+</div>
+<!-- <router-link></router-link> -->

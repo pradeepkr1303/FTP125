@@ -1,0 +1,57 @@
+<div>
+
+<div *ngIf = "isFound">
+    <h3>Pending Leave Applications</h3>
+    <div>
+     <table class = "table table-borderless table-dark" style="text-align:center;">
+         <tr>
+           <th>Leave Id</th>
+           <th>Leave Type</th>
+           <th>Start Date</th>
+           <th>End Date</th>
+           <th>No Of Days</th>
+           <th>Leave Status</th>
+           <th>Reason</th>
+           <th>Empl Id</th>
+           <th>Approve/Deny</th>
+         </tr>
+       <tbody>
+         <tr *ngFor = "let pendlev of leavedetails" >
+           <td>{{pendlev.leaveId}}</td>
+           <td>{{pendlev.leaveType}}</td>
+           <td>{{pendlev.startDate}}</td>
+           <td>{{pendlev.endDate}}</td>
+           <td>{{pendlev.noOfDays}}</td>
+           <td>{{pendlev.leaveStatus}}</td>
+           <td>{{pendlev.reason}}</td>
+           <td>{{pendlev.emplId}}</td>
+           <td><form (ngSubmit) = "sendLeaveId(pendlev.leaveId)"><input type="submit"  value="Approve/Deny" class="btn-info btn-sm sm-2" data-toggle="modal" data-target="#myModalApproveDeny"></form></td>
+         </tr>
+       </tbody>
+     </table>
+    </div>
+      <div class = "container" *ngIf = "isNotFound">
+       {{errorMessage}}
+     </div>
+     
+    <div class="modal fade" id="myModalApproveDeny" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content" *ngIf = "renderApproveOrDeny">
+          <div class="modal-header bg-dark" style="color:white">
+            <h4 class="modal-title" style="text-align:center; width:90%;">New Leave form</h4>
+            <button type="button" class="close" data-dismiss="modal" style="width:10%; text-align:center; color:white">x</button>
+          </div>
+          <div class="modal-body">
+            <app-approve-ordeny [leaveId] = "leaveid"></app-approve-ordeny>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

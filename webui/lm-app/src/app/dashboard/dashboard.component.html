@@ -1,0 +1,51 @@
+<!-- <div class = container>
+  <div class="row">
+    <div class="col-lg-8 btn" style="background-color:yellow;">
+      <a routerLink = "listById" >view employee</a>
+    </div>
+    <div class="col-lg btn" style="background-color:aqua">
+dfhfddf
+    </div>
+  </div>
+</div> -->
+
+<div *ngIf = "employee">
+  <div style="padding-top:0.125%;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="position:fixed; width:100%;">
+    <img src="https://hexaware.com/wp-content/themes/hexaware-main/images/Brand/downloadbrand/color/logo.png" style="height:75px" alt="Hexaware logo">
+    <a class="navbar-brand" href=""><h4>Leave Management System</h4></a>
+    <div class="navbar-brand" style="text-align:right; width:100%; padding:0;">
+        <a>Welcome {{employee.empName}}!</a>
+      </div>
+    <div style="text-align:right; width:100%; padding:0;">
+      <a routerLink = ""><button class="btn btn-danger btn-sm my-2 my-sm-0" type="submit">Log out</button></a>
+    </div>
+  </nav>
+  </div>
+  <br><br><br><br><br>
+  <div class="container">
+    <div class="row" class="border">
+      <div class="col-6" class="border">
+        <h3>Your Details</h3>
+        <app-list-by-employee-id></app-list-by-employee-id>
+      </div>
+      <div class="col" class="border">
+        <app-view-manager-details></app-view-manager-details>
+      </div>
+    </div>
+  
+    <!-- <div class="row" class="border">
+      <div class="col" class="border">
+          <app-view-manager-details></app-view-manager-details>
+      </div>
+    </div> -->
+  
+    <div class="row" class="border">
+      <app-check-leave-status></app-check-leave-status>
+    </div>
+  
+    <div class="row" class="border">
+      <app-view-pending-leave></app-view-pending-leave>
+    </div>
+  </div>
+</div>

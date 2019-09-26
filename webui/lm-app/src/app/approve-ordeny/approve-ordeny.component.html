@@ -1,0 +1,86 @@
+<div class = "container">
+    <!-- <form #pendingForm = "ngForm" (ngSubmit) = "handleSubmit(pendingForm.value)">
+    <div>
+       <h2 style="text-align:center">View Pending Leaves</h2>
+       <div class ="form-group">
+          <div class = "col-10">
+            <label>Enter Employee Manager Id</label>
+             <input class ="form-control" type="number" name="emplId" [(ngModel)] = "emplId" placeholder="enter employee manager id">
+            </div>
+            <br />
+            <div style="text-align:center">
+              <input type="submit" class="btn btn-primary" value ="view employee leave">
+            </div>
+          </div>
+        </div>
+    </form> -->
+     <div class = "container" *ngIf = "isFound">
+      <!-- <table class = "table table-striped">
+        <thead class = "thread-light">
+          <tr>
+            <th>Leave Id</th>
+            <th>Leave Type</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>No Of Days</th>
+            <th>Leave Status</th>
+            <th>Reason</th>
+            
+            <th>Empl Id</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let pendlev of leavedetails" >
+            <td>{{pendlev.leaveId}}</td>
+            <td>{{pendlev.leaveType}}</td>
+            <td>{{pendlev.startDate}}</td>
+            <td>{{pendlev.endDate}}</td>
+            <td>{{pendlev.noOfDays}}</td>
+            <td>{{pendlev.leaveStatus}}</td>
+            <td>{{pendlev.reason}}</td>
+            
+            <td>{{pendlev.emplId}}</td>
+          </tr>
+        </tbody>
+      </table> -->
+     
+    
+  <form #approveOrDenyForm = "ngForm" (ngSubmit)= "handleClick(approveOrDenyForm.value)">
+    <div class = "form-group">
+    <label><b>Enter the Leave Id</b></label>
+    <input type = "number" [(ngModel)] = "leaveId" class ="form-control" value= "leaveId" name = "leaveId" disabled>
+    </div>
+    <div class ="form-group">
+      <label class="mr-sm-2"><b>Approve or Deny</b></label>
+      <select name = "leaveStatus" value ="status" [(ngModel)]="leaveStatus">
+        <option value="APPROVED">Approved</option>
+        <option value="Denied">Denied</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label><b>Manager Comments</b></label>
+      <textarea rows= "3" cols ="20" class="form-control" value="managerComments" name="managerComments"placeholder="Enter the Manager Comments"[(ngModel)]="comments"></textarea>
+    </div>
+    <div class = "form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
+
+    <div *ngIf="approve">
+      {{success}}
+    </div>
+    <!-- <div *ngIf="approve">
+      {{success}}
+    </div> -->
+</div>
+<div *ngIf = "isNotFound">
+    <p>{{errorMessage}}</p>
+    </div>
+    <div *ngIf = "deny" >
+      <p>{{success}}</p>
+    </div>
+
+
+
+

@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="">Leave Management System</a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <h6 class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Employee
+        </h6>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink = "listAllEmployee">Employee details</a>
+          <a class="dropdown-item" routerLink = "listAllEmployeeById">Search Employee details</a>
+          <a class="dropdown-item" routerLink = "viewManagerDetails">Manager details</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <h6 class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Leave details
+        </h6>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink = "applyForLeave">Apply leave</a>
+          <a class="dropdown-item" routerLink = "leaveStatus">Leave status</a>
+          <a class="dropdown-item" routerLink = "approveOrDeny">Approve/Deny</a>
+        </div>
+      </li>
+    </ul>
+    <a routerLink = ""><button class="btn btn-info btn-sm my-2 my-sm-0" type="submit">Log out</button></a>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

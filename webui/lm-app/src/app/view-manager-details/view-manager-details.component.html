@@ -1,0 +1,44 @@
+<!-- <div class="container row">
+    <h2 style="text-align:center">view manager details</h2>
+    <form #formOne = "ngForm" class = "form-group" (ngSubmit) = "handleSubmit(formOne.value)" >
+      <div class="row">
+        <div class="col-3">
+          <label>Employee ID</label>
+        </div>
+        <div class="col-3">
+          <input class="form-control" type="number" name = "empId" [(ngModel)] = "empId" placeholder="Enter the Employee ID">
+        </div>
+        <div class="col-3" style="text-align:center">
+          <input type = "submit" class= "btn btn-primary" value="View manager details">
+        </div>
+      </div>
+    </form>
+</div> -->
+
+<div *ngIf = "isFound">
+  <div>
+      <h3>Manager Details</h3>
+  </div>
+  <table class="table table-borderless table-dark" style="text-align:center;">
+    <thead>
+      <tr>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Manager ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{employee.empId}}</td>
+        <td>{{employee.empName}}</td>
+        <td>{{employee.empEmail}}</td>
+        <td>{{employee.empPhoneNo}}</td>
+        <td>{{employee.empManagerId}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  
+</div>

@@ -1,0 +1,50 @@
+<div class = container>
+  <form #applyLeaveForm="ngForm" (ngSubmit)="handleSubmit(applyLeaveForm.value)">
+
+        <div>
+            <label><b>Employee Id</b></label>
+            <input type="text" class="form-control" name="emplId" [(ngModel)] = "emplId" value="{{empId}}" disabled>
+        </div>
+
+        <div>
+            <label><b>From </b></label>
+            <input type ="date" class="form-control" name ="startDate" [(ngModel)]="sd" #tf2="ngModel">
+        </div>
+
+        <div>
+          <label><b>To </b></label>
+          <input type ="date" class="form-control" name ="endDate" [(ngModel)]="ed" #tf3="ngModel">
+        </div>
+
+
+        <div>
+          <label><b>Enter the Leave Type</b></label>
+          <select name ="leaveType" class="form-control" name="leaveType" [(ngModel)]="leavetype"
+            placeholder="Enter the Leave Type">
+            <option value ="EL"> EL</option>
+            <option value ="LOP"> LOP</option>
+            <option value ="SICK_LEAVE"> Sick Leave</option>
+          </select>
+        </div>
+
+
+        <div>
+          <label><b>Reason</b></label>
+          <input type = "text" class = "form-control" name = "reason" [(ngModel)]="reas" placeholder = "Enter the Reason">
+        </div>
+
+        <br>
+        <div style="text-align:center; width:100%; padding-right:2%;">
+          <button style="align-content:center" class="btn btn-primary" type="submit">Apply</button>
+        </div>
+
+        <div class = "alert alert-info" *ngIf = "isApplied">
+          <h2>{{successMessage}}</h2>
+        </div>
+
+        <div class = "alert alert-danger" *ngIf = "isNotApplied">
+          <h2>Sorry!{{errorMessage}}</h2>
+        </div>
+
+  </form>
+</div>
